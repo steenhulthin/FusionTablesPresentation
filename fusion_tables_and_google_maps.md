@@ -32,18 +32,6 @@ Let's see that in action!
 
 !
 
-#### "We added maps to our website ... with no extra maintance cost."
-
-> _official at MBBL*_ 
-
-###### _* Ministry of Housing, Urban and Rural Affairs_
-
-#### "It's Cloud and totally Web Scale!"
-
-> _A hipster on the internet_
-
-!
-
 My story... (1)
 ===============
 
@@ -213,10 +201,6 @@ Traffic lights grouping of all municipalities
 
 One example:
 [http://percipio.dk/arealligningvilla/](http://percipio.dk/arealligningvilla/)
-
-!
-
-
 
 !
 
