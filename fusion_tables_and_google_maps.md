@@ -9,13 +9,26 @@ Short title:
 
 ### Steen Hulthin Rasmussen
 
-### percipio.dk
+#### Freelance code monkey
+##### and chocolate lover
 
 
 ***
 > `twitter: @steenhulthin`
 >
 > `blog: steen.hulthin.dk/blog`
+
+!
+
+
+The 2-minutes Version
+---------------------
+
+Google Maps is digital maps...
+
+Fusion tables is a table store with built-in interactions with Google Maps (and Google Chart tools)
+
+Let's see that in action!
 
 !
 
@@ -28,17 +41,6 @@ Short title:
 #### "It's Cloud and totally Web Scale!"
 
 > _A hipster on the internet_
-
-!
-
-The 2-minutes Version
----------------------
-
-Google Maps is digital maps...
-
-Fusion tables is a table store with built-in interactions with Google Maps (and Google Chart tools)
-
-Let's see it is action!
 
 !
 
@@ -59,10 +61,10 @@ My story... (2)
 
 * Some knowledge of Fusion Tables with Google Maps from abandoned project:
 [postnummerkortet.dk](http://postnummerkortet.dk/version2/)
-* Quality data available 
+* BBR data quality data available 
 * No server cost (for small sites)
 
-Ok ready as can be!
+Ok, ready as can be!
 
 !
 
@@ -83,7 +85,7 @@ Revised architechture
 Stumbling Block 1
 -----------------
 
-Getting geodata into a Fusion Table
+Getting geodata into a Fusion Table 
 
 Fusion tables only support one geodata format: kml
 
@@ -115,6 +117,19 @@ Let see that.
 
 !
 
+Fusion Tables API
+-----------------
+
+Quite simple SQL-ish API
+
+- Base API is http-based
+- Bindings in many languages (not all complete)
+- Bulk update restrictions *
+
+> _* `Delete` old and `Add` new works faster than `Update`_
+
+!
+
 Stumbling Block 3
 -----------------
 
@@ -137,53 +152,78 @@ Architecture with OAuth
 
 !
 
+Stumbling Block 3
+-----------------
+
+Traffic limits
+
+Fusion Tables restrictions:
+
+- 25000 requests / day 
+- "Invisible" limits on req/s
+- Setting req/s limits is NOT foolproof
+
+Solution: Throttle down request rate
+> also called: `Thread.Sleep(500)`
+
+!
+
+Stumbling Block 4
+-----------------
+
+Fusion Tables are not perfect:
+* No legends
+* Unexplainable/unexpected behaviour
+* Limited control over map feature styling
+
+Google Maps to the rescue!
+
+!
+
+Google Map API
+--------------
+
+- Feature rich Javascript API
+- Integrates very well with Fusion Tables
+
+!
+
+Architecture with Google Maps
+-----------------------------
+
+<img src="architecture_maps.jpg" alt="Drawing" style="width: 100%; height: 100%; "/>
+
+> Fusion Tables styling is gone...
+
+!
+
+Architecture with Google Maps
+-----------------------------
+
+<img src="architecture_legend.jpg" alt="Drawing" style="width: 100%; height: 100%; "/>
+
+> But can be added in Google Maps!
+
+!
+
+The final result
+----------------
+
+Traffic lights grouping of all municipalities
+
+One example:
+[http://percipio.dk/arealligningvilla/](http://percipio.dk/arealligningvilla/)
+
+!
+
 
 
 !
 
-restrictions 
-25000 requests / day BUT boost limit.
+Thanks
 
-! 
+@steenhulthin
 
-Test user 
-Prod user
-users have their own data.
+phone: +45 27 28 99 69
 
-
-#. What is Fusion Tables
-#. The status of Fusion Tables as being "beta"
-#. What is Google Maps api?
-#. Spatial data - the simple version. Data with a location.
-#. OAuth ....
-#. Code 
-#. the challanges
-#. restriction
-
-# best used for
-# don't use for
-
-
-
-The case:
-customer needs:
-	hosting, no
-	many users, no
-	status of the project, prototype-ish 
-
-Getting the api key. read access vs write access and the quirks around it. 
-Setting up accounts (test, prod, whatever). There could be better ways. Use personal account? probably not for any production system. Lifetime.
-
-Importing spatial data
-======================
-tool for shp import. 
-Import into fusion tables. 
-Spatial reference.
-
-
-!
-
-Questions?
-
-!
-
+Slides: 
