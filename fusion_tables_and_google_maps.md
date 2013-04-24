@@ -118,16 +118,22 @@ Let see that.
 Stumbling Block 3
 -----------------
 
+Write access requires user accept.
+
 OAuth is not super simple!
 
 Requires manual interaction the first logon.
 
-Subsequent requests can be made with a refresh token
+Subsequent requests can be made with a refresh token.
+
+`code?`
 
 !
 
+Architecture with OAuth
+-----------------------
 
-
+<img src="architecture_oauth.jpg" alt="Drawing" style="width: 100%; height: 100%; "/>
 
 !
 
@@ -139,6 +145,7 @@ restrictions
 25000 requests / day BUT boost limit.
 
 ! 
+
 Test user 
 Prod user
 users have their own data.
